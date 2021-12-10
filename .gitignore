@@ -1,0 +1,14 @@
+.vs/
+obj/
+/.work/
+/coverage/
+/dist/
+/node_modules/
+*.aps
+*.iobj
+*.ipdb
+*.pdb
+*.user
+.github
+npm-debug.log
+yarn-error.log

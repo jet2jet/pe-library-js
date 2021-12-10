@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": "./src/main",
+    "rootDir": "../..",
+    "paths": {
+      "@/*": ["../../src/main/*"]
+    },
+    "target": "es2015",
+    "types": ["node", "jest"]
+  },
+  "include": [
+    "./src/main/**/*.ts",
+    "./src/test/**/*.ts",
+    "./test/typings/*.d.ts"
+  ]
+}

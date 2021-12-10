@@ -1,0 +1,17 @@
+language: node_js
+node_js: '12'
+sudo: false
+
+cache: npm
+
+matrix:
+  include:
+    - name: 'Lint'
+      env:
+        - NPM_SCRIPT=lint
+    - name: 'Test'
+      env:
+        - NPM_SCRIPT=test
+  fast_finish: true
+
+script: npm run $NPM_SCRIPT
