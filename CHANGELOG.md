@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2
+
+- Remove `@internal` specifier for some methods
+
 ## v0.1.1
 
 - Export `NtExecutableSection` and `NtExecutableFromOptions` types
