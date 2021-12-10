@@ -1,6 +1,15 @@
-import NtExecutable from './NtExecutable';
+import NtExecutable, {
+	NtExecutableFromOptions,
+	NtExecutableSection,
+} from './NtExecutable';
 import version from './version';
 
 import * as Format from './format';
 
-export { NtExecutable, version, Format };
+export {
+	NtExecutable,
+	NtExecutableFromOptions,
+	NtExecutableSection,
+	version,
+	Format,
+};
