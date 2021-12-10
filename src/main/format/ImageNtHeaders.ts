@@ -70,7 +70,6 @@ export default class ImageNtHeaders extends FormatBase {
 			this.view.byteOffset + this.getDataDirectoryOffset()
 		);
 	}
-	// @internal
 	public getDataDirectoryOffset(): number {
 		let off = ImageFileHeader.size + 4;
 		const magic = this.view.getUint16(off, true);

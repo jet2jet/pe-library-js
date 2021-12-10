@@ -187,7 +187,6 @@ export default class NtExecutable {
 		return this._nh;
 	}
 
-	// @internal
 	public getRawHeader(): ArrayBuffer {
 		return this._headers;
 	}
