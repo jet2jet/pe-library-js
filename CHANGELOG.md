@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.1
+
+- Fix version information (no classes/types are changed)
+
 ## v0.2.0
 
 - Add `NtExecutableResource` class and related types
