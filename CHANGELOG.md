@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0
+
+- Add support for 'unparsable' resource data
+  - Use `ignoreUnparsableData` parameter on `from` method of `NtExecutableResource`.
+
 ## v0.2.1
 
 - Fix version information (no classes/types are changed)
