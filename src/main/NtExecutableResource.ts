@@ -512,7 +512,10 @@ export default class NtExecutableResource {
 	private originalSize: number = 0;
 
 	private constructor() {}
-	private parse(section: Readonly<NtExecutableSection>) {
+	private parse(
+		section: Readonly<NtExecutableSection>,
+		ignoreUnparsableData: boolean
+	) {
 		if (!section.data) {
 			return;
 		}
@@ -533,15 +536,31 @@ export default class NtExecutableResource {
 				section.info.virtualAddress;
 			const size = view.getUint32(l.dataOffset + 4, true);
 			const cp = view.getUint32(l.dataOffset + 8, true);
-			const bin = new Uint8Array(size);
-			bin.set(new Uint8Array(section.data!, off, size));
-			res.push({
-				type: t.type,
-				id: n.name,
-				lang: l.lang,
-				codepage: cp,
-				bin: bin.buffer,
-			});
+			if (off >= 0) {
+				const bin = new Uint8Array(size);
+				bin.set(new Uint8Array(section.data!, off, size));
+				res.push({
+					type: t.type,
+					id: n.name,
+					lang: l.lang,
+					codepage: cp,
+					bin: bin.buffer,
+				});
+			} else {
+				if (!ignoreUnparsableData) {
+					throw new Error(
+						'Cannot parse resource directory entry; RVA seems to be invalid.'
+					);
+				}
+				res.push({
+					type: t.type,
+					id: n.name,
+					lang: l.lang,
+					codepage: cp,
+					bin: new ArrayBuffer(0),
+					rva: l.dataOffset,
+				});
+			}
 		};
 		for (let i = 0; i < nameCount; ++i) {
 			const nameOffset = view.getUint32(off, true) & 0x7fffffff;
@@ -576,11 +595,17 @@ export default class NtExecutableResource {
 	}
 
 	/**
-	 * Parses resource data for NtExecutable.
+	 * Parses resource data for `NtExecutable`.
 	 * This function returns valid instance even if
 	 * the executable does not have resource data.
+	 * @param exe `NtExecutable` instance
+	 * @param ignoreUnparsableData (default: false) specify true if skipping 'unparsable' (e.g. unusual format) data.
+	 *   When true, the resource data may break on write operation.
 	 */
-	public static from(exe: NtExecutable): NtExecutableResource {
+	public static from(
+		exe: NtExecutable,
+		ignoreUnparsableData: boolean = false
+	): NtExecutableResource {
 		const secs = ([] as NtExecutableSection[])
 			.concat(exe.getAllSections())
 			.sort((a, b) => a.info.virtualAddress - b.info.virtualAddress);
@@ -610,7 +635,7 @@ export default class NtExecutableResource {
 		const r = new NtExecutableResource();
 		r.sectionDataHeader = entry ? cloneObject(entry.info) : null;
 		if (entry) {
-			r.parse(entry);
+			r.parse(entry, ignoreUnparsableData);
 		}
 		return r;
 	}
@@ -751,16 +776,21 @@ export default class NtExecutableResource {
 		let va = virtualAddress + dataOffset;
 		this.entries.forEach((e) => {
 			const len = e.bin.byteLength;
-			va = roundUp(va, 8);
-			// RVA
-			view.setUint32(o, va, true);
+			if (typeof e.rva !== 'undefined') {
+				// RVA
+				view.setUint32(o, e.rva, true);
+			} else {
+				va = roundUp(va, 8);
+				// RVA
+				view.setUint32(o, va, true);
+				va += len;
+			}
 			// size
 			view.setUint32(o + 4, len, true);
 			// codepage
 			view.setUint32(o + 8, e.codepage, true);
 			// (zero)
 			view.setUint32(o + 12, 0, true);
-			va += len;
 			o += 16;
 		});
 

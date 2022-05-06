@@ -21,15 +21,16 @@ export interface ResourceEntryBaseType<
 	 * Typically this value would be the Unicode code page '1200'.
 	 */
 	codepage: number;
-	/** The actual resource data. */
+	/** The actual resource data. If the data cannot be read, this field will be an empty binary. */
 	bin: ArrayBuffer;
+	/** RVA data for resource data. This field is available only when actual data (`bin` field) cannot be read. */
+	rva?: number;
 	/** (used by output) */
 	offset?: number;
 }
 
-export type ResourceEntryT<
-	TType extends string | number
-> = ResourceEntryBaseType<TType, string | number, string | number>;
+export type ResourceEntryT<TType extends string | number> =
+	ResourceEntryBaseType<TType, string | number, string | number>;
 
 export type ResourceEntryTT<
 	TType extends string | number,
