@@ -1,4 +1,3 @@
-import { mocked } from 'ts-jest/utils';
 import ImageSectionHeaderArray, {
 	ImageSectionHeader,
 } from '@/format/ImageSectionHeaderArray';
@@ -117,21 +116,23 @@ jest.mock('@/util/functions');
 
 describe('ImageSectionHeaderArray', () => {
 	beforeEach(() => {
-		mocked(getFixedString).mockImplementation((view, offset, length) => {
-			let actualLen = 0;
-			for (let i = 0; i < length; ++i) {
-				if (view.getUint8(offset + i) === 0) {
-					break;
+		jest.mocked(getFixedString).mockImplementation(
+			(view, offset, length) => {
+				let actualLen = 0;
+				for (let i = 0; i < length; ++i) {
+					if (view.getUint8(offset + i) === 0) {
+						break;
+					}
+					++actualLen;
 				}
-				++actualLen;
+				return Buffer.from(
+					view.buffer,
+					view.byteOffset + offset,
+					actualLen
+				).toString('utf8');
 			}
-			return Buffer.from(
-				view.buffer,
-				view.byteOffset + offset,
-				actualLen
-			).toString('utf8');
-		});
-		mocked(setFixedString).mockImplementation(
+		);
+		jest.mocked(setFixedString).mockImplementation(
 			(view, offset, length, text) => {
 				const u = new Uint8Array(
 					view.buffer,
