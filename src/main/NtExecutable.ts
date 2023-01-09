@@ -94,7 +94,7 @@ export default class NtExecutable {
 		);
 		if (securityEntry.size > 0) {
 			// Signed executables should be parsed only when `ignoreCert` is true
-			if (!options || !options.ignoreCert) {
+			if (!options?.ignoreCert) {
 				throw new Error(
 					'Parsing signed executable binary is not allowed by default.'
 				);

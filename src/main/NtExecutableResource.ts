@@ -93,7 +93,7 @@ function readLanguageTable(
 		}
 
 		const name = readString(view, nameOffset);
-		cb(typeEntry, nameEntry, { lang: name, dataOffset: dataOffset });
+		cb(typeEntry, nameEntry, { lang: name, dataOffset });
 		off += 8;
 	}
 	for (let i = 0; i < idCount; ++i) {
@@ -105,7 +105,7 @@ function readLanguageTable(
 			continue;
 		}
 
-		cb(typeEntry, nameEntry, { lang: id, dataOffset: dataOffset });
+		cb(typeEntry, nameEntry, { lang: id, dataOffset });
 		off += 8;
 	}
 }
@@ -195,12 +195,14 @@ function divideEntriesImplByID<
 	names: string[],
 	entries: Array<ResourceEntryTT<TType, TID>>
 ) {
-	const entriesByString: {
-		[key: string]: ResourceEntryBaseType<TType, TID, string>;
-	} = {};
-	const entriesByNumber: {
-		[key: number]: ResourceEntryBaseType<TType, TID, number>;
-	} = {};
+	const entriesByString: Record<
+		string,
+		ResourceEntryBaseType<TType, TID, string>
+	> = {};
+	const entriesByNumber: Record<
+		number,
+		ResourceEntryBaseType<TType, TID, number>
+	> = {};
 	entries.forEach((e) => {
 		if (typeof e.lang === 'string') {
 			entriesByString[e.lang] = e as ResourceEntryBaseType<
@@ -236,12 +238,14 @@ function divideEntriesImplByName<TType extends string | number>(
 	names: string[],
 	entries: Array<ResourceEntryT<TType>>
 ) {
-	const entriesByString: {
-		[key: string]: Array<ResourceEntryTT<TType, string>> | undefined;
-	} = {};
-	const entriesByNumber: {
-		[key: number]: Array<ResourceEntryTT<TType, number>> | undefined;
-	} = {};
+	const entriesByString: Record<
+		string,
+		Array<ResourceEntryTT<TType, string>> | undefined
+	> = {};
+	const entriesByNumber: Record<
+		number,
+		Array<ResourceEntryTT<TType, number>> | undefined
+	> = {};
 	entries.forEach((e) => {
 		if (typeof e.id === 'string') {
 			const a = entriesByString[e.id] ?? (entriesByString[e.id] = []);
@@ -285,12 +289,14 @@ function divideEntriesImplByType(
 	names: string[],
 	entries: ResourceEntry[]
 ) {
-	const entriesByString: {
-		[key: string]: Array<ResourceEntryT<string>> | undefined;
-	} = {};
-	const entriesByNumber: {
-		[key: number]: Array<ResourceEntryT<number>> | undefined;
-	} = {};
+	const entriesByString: Record<
+		string,
+		Array<ResourceEntryT<string>> | undefined
+	> = {};
+	const entriesByNumber: Record<
+		number,
+		Array<ResourceEntryT<number>> | undefined
+	> = {};
 	entries.forEach((e) => {
 		if (typeof e.type === 'string') {
 			const a = entriesByString[e.type] ?? (entriesByString[e.type] = []);
@@ -825,9 +831,9 @@ export default class NtExecutableResource {
 		}
 
 		return {
-			bin: bin,
+			bin,
 			rawSize: size,
-			dataOffset: dataOffset,
+			dataOffset,
 			descEntryOffset: descOffset,
 			descEntryCount: this.entries.length,
 		};
