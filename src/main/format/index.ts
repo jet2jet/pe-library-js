@@ -1,17 +1,17 @@
-import ArrayFormatBase from './ArrayFormatBase';
-import FormatBase from './FormatBase';
+import ArrayFormatBase from './ArrayFormatBase.js';
+import FormatBase from './FormatBase.js';
 import ImageDataDirectoryArray, {
 	ImageDataDirectory,
-} from './ImageDataDirectoryArray';
-import ImageDirectoryEntry from './ImageDirectoryEntry';
-import ImageDosHeader from './ImageDosHeader';
-import ImageFileHeader from './ImageFileHeader';
-import ImageNtHeaders from './ImageNtHeaders';
-import ImageOptionalHeader from './ImageOptionalHeader';
-import ImageOptionalHeader64 from './ImageOptionalHeader64';
+} from './ImageDataDirectoryArray.js';
+import ImageDirectoryEntry from './ImageDirectoryEntry.js';
+import ImageDosHeader from './ImageDosHeader.js';
+import ImageFileHeader from './ImageFileHeader.js';
+import ImageNtHeaders from './ImageNtHeaders.js';
+import ImageOptionalHeader from './ImageOptionalHeader.js';
+import ImageOptionalHeader64 from './ImageOptionalHeader64.js';
 import ImageSectionHeaderArray, {
 	ImageSectionHeader,
-} from './ImageSectionHeaderArray';
+} from './ImageSectionHeaderArray.js';
 
 export {
 	ArrayFormatBase,

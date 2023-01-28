@@ -2,7 +2,7 @@ import ResourceEntry, {
 	ResourceEntryBaseType,
 	ResourceEntryT,
 	ResourceEntryTT,
-} from './ResourceEntry';
+} from './ResourceEntry.js';
 
 export {
 	ResourceEntry,

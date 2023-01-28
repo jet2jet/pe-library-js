@@ -1,4 +1,4 @@
-import FormatBase from './FormatBase';
+import FormatBase from './FormatBase.js';
 
 /** abstract class that support array-like methods and 'for...of' operation */
 abstract class ArrayFormatBase<T> extends FormatBase {

@@ -1,5 +1,5 @@
-import NtExecutable, { NtExecutableSection } from '@/NtExecutable';
-import ImageDirectoryEntry from '@/format/ImageDirectoryEntry';
+import NtExecutable, { NtExecutableSection } from '@/NtExecutable.js';
+import ImageDirectoryEntry from '@/format/ImageDirectoryEntry.js';
 
 // prettier-ignore
 const DUMMY_EXECUTABLE_32 = new Uint8Array([

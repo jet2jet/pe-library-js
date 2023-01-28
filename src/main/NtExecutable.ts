@@ -1,10 +1,10 @@
-import ImageDataDirectoryArray from './format/ImageDataDirectoryArray';
-import ImageDirectoryEntry from './format/ImageDirectoryEntry';
-import ImageDosHeader from './format/ImageDosHeader';
-import ImageNtHeaders from './format/ImageNtHeaders';
+import ImageDataDirectoryArray from './format/ImageDataDirectoryArray.js';
+import ImageDirectoryEntry from './format/ImageDirectoryEntry.js';
+import ImageDosHeader from './format/ImageDosHeader.js';
+import ImageNtHeaders from './format/ImageNtHeaders.js';
 import ImageSectionHeaderArray, {
 	ImageSectionHeader,
-} from './format/ImageSectionHeaderArray';
+} from './format/ImageSectionHeaderArray.js';
 
 import {
 	allocatePartialBinary,
@@ -12,8 +12,8 @@ import {
 	cloneObject,
 	cloneToArrayBuffer,
 	roundUp,
-} from './util/functions';
-import { makeEmptyNtExecutableBinary } from './util/generate';
+} from './util/functions.js';
+import { makeEmptyNtExecutableBinary } from './util/generate.js';
 
 export interface NtExecutableFromOptions {
 	/** true to parse binary even if the binary contains Certificate data (i.e. 'signed') */

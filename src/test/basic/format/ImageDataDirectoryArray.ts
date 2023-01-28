@@ -1,6 +1,6 @@
 import ImageDataDirectoryArray, {
 	ImageDataDirectory,
-} from '@/format/ImageDataDirectoryArray';
+} from '@/format/ImageDataDirectoryArray.js';
 
 // The definition:
 //
