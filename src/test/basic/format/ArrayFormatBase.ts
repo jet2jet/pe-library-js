@@ -1,7 +1,7 @@
-import ArrayFormatBase from '@/format/ArrayFormatBase';
-import FormatBase from '@/format/FormatBase';
+import ArrayFormatBase from '@/format/ArrayFormatBase.js';
+import FormatBase from '@/format/FormatBase.js';
 
-jest.mock('@/format/FormatBase');
+jest.mock('@/format/FormatBase.js');
 
 interface DummyData {
 	id: string;

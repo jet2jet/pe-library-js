@@ -1,5 +1,5 @@
-import ArrayFormatBase from './ArrayFormatBase';
-import { getFixedString, setFixedString } from '../util/functions';
+import ArrayFormatBase from './ArrayFormatBase.js';
+import { getFixedString, setFixedString } from '../util/functions.js';
 
 export interface ImageSectionHeader {
 	name: string;

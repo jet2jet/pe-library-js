@@ -1,4 +1,4 @@
-import FormatBase from './FormatBase';
+import FormatBase from './FormatBase.js';
 
 function getUint64LE(view: DataView, offset: number) {
 	return (

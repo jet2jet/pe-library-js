@@ -5,13 +5,13 @@
 //
 // NOTE: the original dos-stub.asm program and the bit code in DOS_STUB_PROGRAM are under the 0-BSD license.
 
-import ImageDataDirectoryArray from '../format/ImageDataDirectoryArray';
-import ImageDosHeader from '../format/ImageDosHeader';
-import ImageFileHeader from '../format/ImageFileHeader';
-import ImageNtHeaders from '../format/ImageNtHeaders';
-import ImageOptionalHeader from '../format/ImageOptionalHeader';
-import ImageOptionalHeader64 from '../format/ImageOptionalHeader64';
-import { copyBuffer, roundUp } from './functions';
+import ImageDataDirectoryArray from '../format/ImageDataDirectoryArray.js';
+import ImageDosHeader from '../format/ImageDosHeader.js';
+import ImageFileHeader from '../format/ImageFileHeader.js';
+import ImageNtHeaders from '../format/ImageNtHeaders.js';
+import ImageOptionalHeader from '../format/ImageOptionalHeader.js';
+import ImageOptionalHeader64 from '../format/ImageOptionalHeader64.js';
+import { copyBuffer, roundUp } from './functions.js';
 
 // fill with '0x00' to make 8-bytes alignment
 // prettier-ignore

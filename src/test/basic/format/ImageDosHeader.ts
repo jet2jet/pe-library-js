@@ -1,5 +1,5 @@
-import ImageDosHeader from '@/format/ImageDosHeader';
-import { ExcludeNullField, getFieldOffset } from '../../testUtils/structure';
+import ImageDosHeader from '@/format/ImageDosHeader.js';
+import { ExcludeNullField, getFieldOffset } from '../../testUtils/structure.js';
 
 const FIELDS = [
 	['magic', 2],

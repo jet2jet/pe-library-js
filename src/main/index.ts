@@ -1,13 +1,13 @@
 import NtExecutable, {
 	NtExecutableFromOptions,
 	NtExecutableSection,
-} from './NtExecutable';
-import NtExecutableResource from './NtExecutableResource';
-import { calculateCheckSumForPE } from './util/functions';
-import version from './version';
+} from './NtExecutable.js';
+import NtExecutableResource from './NtExecutableResource.js';
+import { calculateCheckSumForPE } from './util/functions.js';
+import version from './version.js';
 
-import * as Format from './format';
-import * as Type from './type';
+import * as Format from './format/index.js';
+import * as Type from './type/index.js';
 
 export {
 	NtExecutable,

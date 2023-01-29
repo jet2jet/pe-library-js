@@ -1,4 +1,4 @@
-import FormatBase from '@/format/FormatBase';
+import FormatBase from '@/format/FormatBase.js';
 
 class DummyFormat extends FormatBase {
 	public constructor(view: DataView) {

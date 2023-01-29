@@ -1,7 +1,7 @@
 import ImageSectionHeaderArray, {
 	ImageSectionHeader,
-} from '@/format/ImageSectionHeaderArray';
-import { getFixedString, setFixedString } from '@/util/functions';
+} from '@/format/ImageSectionHeaderArray.js';
+import { getFixedString, setFixedString } from '@/util/functions.js';
 
 // The definition:
 //

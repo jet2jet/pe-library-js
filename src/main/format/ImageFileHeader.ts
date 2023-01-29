@@ -1,4 +1,4 @@
-import FormatBase from './FormatBase';
+import FormatBase from './FormatBase.js';
 
 export default class ImageFileHeader extends FormatBase {
 	public static readonly size = 20;

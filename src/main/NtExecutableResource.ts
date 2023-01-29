@@ -1,18 +1,18 @@
-import NtExecutable, { NtExecutableSection } from './NtExecutable';
-import ImageDirectoryEntry from './format/ImageDirectoryEntry';
-import { ImageSectionHeader } from './format/ImageSectionHeaderArray';
+import NtExecutable, { NtExecutableSection } from './NtExecutable.js';
+import ImageDirectoryEntry from './format/ImageDirectoryEntry.js';
+import { ImageSectionHeader } from './format/ImageSectionHeaderArray.js';
 import ResourceEntry, {
 	ResourceEntryBaseType,
 	ResourceEntryT,
 	ResourceEntryTT,
-} from './type/ResourceEntry';
+} from './type/ResourceEntry.js';
 import {
 	binaryToString,
 	cloneObject,
 	copyBuffer,
 	roundUp,
 	stringToBinary,
-} from './util/functions';
+} from './util/functions.js';
 
 function removeDuplicates<T>(a: readonly T[]): T[] {
 	return a.reduce<T[]>((p, c) => {

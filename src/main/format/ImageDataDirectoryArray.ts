@@ -1,4 +1,4 @@
-import ArrayFormatBase from './ArrayFormatBase';
+import ArrayFormatBase from './ArrayFormatBase.js';
 
 export interface ImageDataDirectory {
 	virtualAddress: number;

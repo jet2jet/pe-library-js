@@ -1,5 +1,5 @@
-import FormatBase from './FormatBase';
-import { createDataView } from '../util/functions';
+import FormatBase from './FormatBase.js';
+import { createDataView } from '../util/functions.js';
 
 export default class ImageDosHeader extends FormatBase {
 	public static readonly size = 64;

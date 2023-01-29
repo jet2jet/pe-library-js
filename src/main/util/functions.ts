@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference lib='dom' />
 
-import ImageDosHeader from '../format/ImageDosHeader';
+import ImageDosHeader from '../format/ImageDosHeader.js';
 
 // We must use 'object' for this function (Record<string, unknown> is not usable here)
 /* eslint-disable @typescript-eslint/ban-types */
