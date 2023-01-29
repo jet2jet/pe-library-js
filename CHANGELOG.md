@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.0
+
+- Add support for ES module loading in Node.js environment
+
 ## v0.3.0
 
 - Add support for 'unparsable' resource data

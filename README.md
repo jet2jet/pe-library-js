@@ -8,8 +8,8 @@ pe-library provides parsing and generating Portable Executable (known as Windows
 ## Usage
 
 ```js
-const PE = require('pe-library');
-const fs = require('fs');
+import * as PE from 'pe-library';
+import * as fs from 'fs';
 
 // load and parse data
 let data = fs.readFileSync('MyApp.exe');
