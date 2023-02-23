@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	preset: 'ts-jest',
 	clearMocks: true,
 	testEnvironment: 'node',
@@ -8,9 +8,17 @@ module.exports = {
 		'^@/(.*)$': '<rootDir>/src/main/$1',
 		'(.+)\\.js': '$1',
 	},
-	globals: {
-		'ts-jest': {
-			tsconfig: 'tsconfig.test.json',
-		},
+	extensionsToTreatAsEsm: ['.ts'],
+	transform: {
+		'^.+\\.tsx?$': [
+			'ts-jest',
+			{
+				tsconfig: 'tsconfig.test.json',
+				useESM: true,
+				diagnostics: {
+					ignoreCodes: ['TS151001'],
+				},
+			},
+		],
 	},
 };

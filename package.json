@@ -7,15 +7,13 @@
   },
   "engineStrict": true,
   "description": "Node.js library for Portable Executable format",
-  "main": "./dist/index.js",
-  "module": "./dist/_esm/index.js",
+  "module": "./dist/index.js",
+  "type": "module",
   "exports": {
-    "node": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "import": "./dist/_esm/index.js",
-    "require": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./cjs": {
+      "require": "./cjs.cjs"
+    }
   },
   "types": "./dist/index.d.ts",
   "author": "jet",
@@ -34,9 +32,8 @@
     "url": "https://github.com/jet2jet/pe-library-js.git"
   },
   "scripts": {
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc -p ./tsconfig.app.json",
-    "build:esm": "tsc -p ./tsconfig.app.esm.json && node ./tools/copyEsmFile.js",
+    "build": "npm run build:esm",
+    "build:esm": "tsc -p ./tsconfig.app.json",
     "lint": "npm run lint:prettier && npm run lint:eslint",
     "lint:eslint": "eslint -c .eslintrc.yml --ext .js,.jsx,.ts,.tsx .",
     "lint:eslint:fix": "eslint -c .eslintrc.yml --fix --ext .js,.jsx,.ts,.tsx .",
