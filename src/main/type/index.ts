@@ -1,10 +1,11 @@
-import ResourceEntry, {
+import type {
 	ResourceEntryBaseType,
 	ResourceEntryT,
 	ResourceEntryTT,
 } from './ResourceEntry.js';
+import type ResourceEntry from './ResourceEntry.js';
 
-export {
+export type {
 	ResourceEntry,
 	ResourceEntryBaseType,
 	ResourceEntryT,

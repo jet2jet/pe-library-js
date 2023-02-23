@@ -1,5 +1,5 @@
 import ImageSectionHeaderArray, {
-	ImageSectionHeader,
+	type ImageSectionHeader,
 } from '@/format/ImageSectionHeaderArray.js';
 import { getFixedString, setFixedString } from '@/util/functions.js';
 

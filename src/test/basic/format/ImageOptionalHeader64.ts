@@ -111,9 +111,7 @@ describe('ImageOptionalHeader64', () => {
 						);
 
 						// test bigint
-						// TODO: remove 'as' on TS 4.3
-						const fieldNameBigInt =
-							`${args[0]}BigInt` as `${(typeof args)[0]}BigInt`;
+						const fieldNameBigInt = `${args[0]}BigInt` as const;
 						dataView.setUint32(
 							actualDataOffset + offset,
 							0x76543210,
@@ -180,9 +178,7 @@ describe('ImageOptionalHeader64', () => {
 						);
 
 						// test bigint
-						// TODO: remove 'as' on TS 4.3
-						const fieldNameBigInt =
-							`${args[0]}BigInt` as `${(typeof args)[0]}BigInt`;
+						const fieldNameBigInt = `${args[0]}BigInt` as const;
 						header[fieldNameBigInt] = BigInt('0xfedcba9876543210');
 						expect(
 							dataView.getUint32(actualDataOffset + offset, true)

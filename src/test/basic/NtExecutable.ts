@@ -1,4 +1,4 @@
-import NtExecutable, { NtExecutableSection } from '@/NtExecutable.js';
+import NtExecutable, { type NtExecutableSection } from '@/NtExecutable.js';
 import ImageDirectoryEntry from '@/format/ImageDirectoryEntry.js';
 
 // prettier-ignore

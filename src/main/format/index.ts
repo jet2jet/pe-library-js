@@ -1,7 +1,7 @@
 import ArrayFormatBase from './ArrayFormatBase.js';
 import FormatBase from './FormatBase.js';
 import ImageDataDirectoryArray, {
-	ImageDataDirectory,
+	type ImageDataDirectory,
 } from './ImageDataDirectoryArray.js';
 import ImageDirectoryEntry from './ImageDirectoryEntry.js';
 import ImageDosHeader from './ImageDosHeader.js';
@@ -10,13 +10,13 @@ import ImageNtHeaders from './ImageNtHeaders.js';
 import ImageOptionalHeader from './ImageOptionalHeader.js';
 import ImageOptionalHeader64 from './ImageOptionalHeader64.js';
 import ImageSectionHeaderArray, {
-	ImageSectionHeader,
+	type ImageSectionHeader,
 } from './ImageSectionHeaderArray.js';
 
 export {
 	ArrayFormatBase,
 	FormatBase,
-	ImageDataDirectory,
+	type ImageDataDirectory,
 	ImageDataDirectoryArray,
 	ImageDirectoryEntry,
 	ImageDosHeader,
@@ -24,7 +24,7 @@ export {
 	ImageNtHeaders,
 	ImageOptionalHeader,
 	ImageOptionalHeader64,
-	ImageSectionHeader,
+	type ImageSectionHeader,
 	ImageSectionHeaderArray,
 };
 

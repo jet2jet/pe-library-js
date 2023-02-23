@@ -1,11 +1,13 @@
-import NtExecutable, { NtExecutableSection } from './NtExecutable.js';
+import type { NtExecutableSection } from './NtExecutable.js';
+import type NtExecutable from './NtExecutable.js';
 import ImageDirectoryEntry from './format/ImageDirectoryEntry.js';
-import { ImageSectionHeader } from './format/ImageSectionHeaderArray.js';
-import ResourceEntry, {
+import type { ImageSectionHeader } from './format/ImageSectionHeaderArray.js';
+import type {
 	ResourceEntryBaseType,
 	ResourceEntryT,
 	ResourceEntryTT,
 } from './type/ResourceEntry.js';
+import type ResourceEntry from './type/ResourceEntry.js';
 import {
 	binaryToString,
 	cloneObject,

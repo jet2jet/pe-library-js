@@ -1,5 +1,5 @@
 import ImageDataDirectoryArray, {
-	ImageDataDirectory,
+	type ImageDataDirectory,
 } from '@/format/ImageDataDirectoryArray.js';
 
 // The definition:

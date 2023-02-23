@@ -3,7 +3,7 @@ import ImageDirectoryEntry from './format/ImageDirectoryEntry.js';
 import ImageDosHeader from './format/ImageDosHeader.js';
 import ImageNtHeaders from './format/ImageNtHeaders.js';
 import ImageSectionHeaderArray, {
-	ImageSectionHeader,
+	type ImageSectionHeader,
 } from './format/ImageSectionHeaderArray.js';
 
 import {
