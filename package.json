@@ -2,8 +2,8 @@
   "name": "pe-library",
   "version": "0.4.0",
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "engineStrict": true,
   "description": "Node.js library for Portable Executable format",
@@ -46,10 +46,9 @@
     "test": "jest --config ./jest.config.basic.js",
     "version": "node ./tools/updateVersion.js ./src/main/version.ts && git add -A ./src/main/version.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^28.1.8",
-    "@types/node": "^12.20.37",
+    "@types/node": "^14.18.36",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
