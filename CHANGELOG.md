@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.1
+
+- Fix section comparison (which allows same section names)
+  - This fixes `NtExecutableResource.from` which an error occurs for some executable binaries.
+
 ## v1.0.0
 
 - Change the library to native ES module
