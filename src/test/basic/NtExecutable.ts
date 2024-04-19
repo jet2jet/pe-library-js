@@ -419,6 +419,10 @@ describe('NtExecutable', () => {
 			expect(
 				exe.getSectionByEntry(ImageDirectoryEntry.Resource)
 			).not.toBeNull();
+			expect(
+				exe.getSectionByEntry(ImageDirectoryEntry.Resource) ===
+					sections[0]
+			).toBe(true);
 			expect(exe.getExtraData()).toBeNull();
 		});
 		it('sections should be added', () => {
@@ -471,6 +475,10 @@ describe('NtExecutable', () => {
 			expect(
 				exe.getSectionByEntry(ImageDirectoryEntry.Resource)
 			).not.toBeNull();
+			expect(
+				exe.getSectionByEntry(ImageDirectoryEntry.Resource) ===
+					sections[0]
+			).toBe(true);
 			expect(exe.getExtraData()).toBeNull();
 		});
 		it('sections should be added', () => {
