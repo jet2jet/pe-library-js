@@ -625,9 +625,9 @@ export default class NtExecutableResource {
 			);
 			for (let i = 0; i < secs.length; ++i) {
 				const s = secs[i];
-				if (s.info.name === entry.info.name) {
+				if (s === entry) {
 					for (let j = i + 1; j < secs.length; ++j) {
-						if (!reloc || secs[j].info.name !== reloc.info.name) {
+						if (!reloc || secs[j] !== reloc) {
 							throw new Error(
 								'After Resource section, sections except for relocation are not supported'
 							);

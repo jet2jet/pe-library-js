@@ -212,6 +212,8 @@ export default class NtExecutable {
 
 	/**
 	 * Return the section data from ImageDirectoryEntry enum value.
+	 * @note
+	 * The returned instance is equal to the value in {@link getAllSections}'s return value.
 	 */
 	public getSectionByEntry(
 		entry: ImageDirectoryEntry
