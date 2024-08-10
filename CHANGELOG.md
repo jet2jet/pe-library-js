@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.1
+
+- Cherry-pick [v.1.0.1](https://github.com/jet2jet/pe-library-js/releases/tag/v1.0.1) bugfix
+
 ## v0.4.0
 
 - Add support for ES module loading in Node.js environment

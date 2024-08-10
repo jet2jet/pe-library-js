@@ -1,5 +1,5 @@
 [![NPM version](https://badge.fury.io/js/pe-library.svg)](https://www.npmjs.com/package/pe-library)
-[![Build Status](https://app.travis-ci.com/jet2jet/pe-library-js.svg?branch=main)](https://app.travis-ci.com/jet2jet/pe-library-js)
+[![Build Status](https://github.com/jet2jet/pe-library-js/actions/workflows/main-ci.yml/badge.svg)](https://github.com/jet2jet/pe-library-js)
 
 # pe-library
 
