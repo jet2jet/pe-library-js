@@ -1,6 +1,8 @@
-name: Main CI
+name: Publish package
 on:
   push:
+    tags:
+      - 'v*.*.*'
 
 jobs:
   get-vars:
@@ -9,6 +11,9 @@ jobs:
   main:
     needs: get-vars
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -16,21 +21,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ needs.get-vars.outputs.node-version }}
-          cache: npm
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup npm
         run: npm i -g npm@${{ needs.get-vars.outputs.npm-version }}
-      - name: Cache node modules
-        id: node_modules_cache
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
       - name: Install
-        if: steps.node_modules_cache.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Lint check
-        run: npm run lint
-      - name: Test
-        run: npm run test
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

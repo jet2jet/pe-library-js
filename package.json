@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "engines": {
     "node": ">=14",
-    "npm": ">=7"
+    "npm": ">=9"
   },
   "engineStrict": true,
   "description": "Node.js library for Portable Executable format",
