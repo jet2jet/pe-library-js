@@ -1,5 +1,5 @@
-import ImageFileHeader from '@/format/ImageFileHeader.js';
 import { getFieldOffset } from '../../testUtils/structure.js';
+import ImageFileHeader from '@/format/ImageFileHeader.js';
 
 // The definition:
 //

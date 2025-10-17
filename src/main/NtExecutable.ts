@@ -5,7 +5,6 @@ import ImageNtHeaders from './format/ImageNtHeaders.js';
 import ImageSectionHeaderArray, {
 	type ImageSectionHeader,
 } from './format/ImageSectionHeaderArray.js';
-
 import {
 	allocatePartialBinary,
 	calculateCheckSumForPE,

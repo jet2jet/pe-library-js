@@ -40,7 +40,9 @@ describe('ImageDataDirectoryArray', () => {
 			beforeEach(() => {
 				dummyData = new ArrayBuffer(TOTAL_DATA_SIZE + actualDataOffset);
 			});
-			for (const index of [...Array(ITEM_COUNT)].map((_, i) => i)) {
+			for (const index of [...Array<undefined>(ITEM_COUNT)].map(
+				(_, i) => i
+			)) {
 				it(`should get valid item for index ${index}`, () => {
 					const dataView = new DataView(dummyData);
 					const dataArray = ImageDataDirectoryArray.from(

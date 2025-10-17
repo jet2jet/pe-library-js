@@ -1,7 +1,7 @@
 export interface ResourceEntryBaseType<
 	TType extends string | number,
 	TID extends string | number,
-	TLang extends string | number
+	TLang extends string | number,
 > {
 	/**
 	 * The resource type name or numeric value.
@@ -34,7 +34,7 @@ export type ResourceEntryT<TType extends string | number> =
 
 export type ResourceEntryTT<
 	TType extends string | number,
-	TID extends string | number
+	TID extends string | number,
 > = ResourceEntryBaseType<TType, TID, string | number>;
 
 /** Raw resource entry data */

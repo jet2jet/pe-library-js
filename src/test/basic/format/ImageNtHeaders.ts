@@ -1,10 +1,9 @@
-import ImageNtHeaders from '@/format/ImageNtHeaders.js';
 import { getFieldOffset } from '../../testUtils/structure.js';
-
+import ImageDataDirectoryArray from '@/format/ImageDataDirectoryArray.js';
 import ImageFileHeader from '@/format/ImageFileHeader.js';
+import ImageNtHeaders from '@/format/ImageNtHeaders.js';
 import ImageOptionalHeader from '@/format/ImageOptionalHeader.js';
 import ImageOptionalHeader64 from '@/format/ImageOptionalHeader64.js';
-import ImageDataDirectoryArray from '@/format/ImageDataDirectoryArray.js';
 
 const FIELDS = [['signature', 4]] as const;
 

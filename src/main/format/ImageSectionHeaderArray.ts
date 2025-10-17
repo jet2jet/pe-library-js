@@ -1,5 +1,5 @@
-import ArrayFormatBase from './ArrayFormatBase.js';
 import { getFixedString, setFixedString } from '../util/functions.js';
+import ArrayFormatBase from './ArrayFormatBase.js';
 
 export interface ImageSectionHeader {
 	name: string;
@@ -17,7 +17,10 @@ export interface ImageSectionHeader {
 export default class ImageSectionHeaderArray extends ArrayFormatBase<ImageSectionHeader> {
 	public static readonly itemSize = 40;
 
-	private constructor(view: DataView, public readonly length: number) {
+	private constructor(
+		view: DataView,
+		public readonly length: number
+	) {
 		super(view);
 	}
 

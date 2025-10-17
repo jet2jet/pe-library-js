@@ -1,5 +1,5 @@
-import ImageOptionalHeader64 from '@/format/ImageOptionalHeader64.js';
 import { getFieldOffset } from '../../testUtils/structure.js';
+import ImageOptionalHeader64 from '@/format/ImageOptionalHeader64.js';
 
 // The definition:
 //

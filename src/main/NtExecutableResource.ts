@@ -1,7 +1,7 @@
-import type { NtExecutableSection } from './NtExecutable.js';
-import type NtExecutable from './NtExecutable.js';
 import ImageDirectoryEntry from './format/ImageDirectoryEntry.js';
 import type { ImageSectionHeader } from './format/ImageSectionHeaderArray.js';
+import type { NtExecutableSection } from './NtExecutable.js';
+import type NtExecutable from './NtExecutable.js';
 import type {
 	ResourceEntryBaseType,
 	ResourceEntryT,
@@ -165,7 +165,7 @@ function readNameTable(
 
 interface DivideEntriesResultTypeCC<
 	TType extends string | number,
-	TID extends string | number
+	TID extends string | number,
 > {
 	id: TID;
 	offset?: number;
@@ -191,7 +191,7 @@ interface StringData {
 
 function divideEntriesImplByID<
 	TType extends string | number,
-	TID extends string | number
+	TID extends string | number,
 >(
 	r: DivideEntriesResultTypeCC<TType, TID>,
 	names: string[],
@@ -363,7 +363,7 @@ function writeString(view: DataView, offset: number, text: string): number {
 
 function writeLanguageTable<
 	TType extends string | number,
-	TID extends string | number
+	TID extends string | number,
 >(
 	view: DataView,
 	offset: number,

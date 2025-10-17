@@ -21,7 +21,9 @@ describe('FormatBase', () => {
 	});
 	it('should work copyTo', () => {
 		const OFFSET = 8;
-		const data = new Uint8Array([...Array(DEFAULT_SIZE)].map((_, i) => i));
+		const data = new Uint8Array(
+			[...Array<undefined>(DEFAULT_SIZE)].map((_, i) => i)
+		);
 		const bin = new ArrayBuffer(OFFSET + DEFAULT_SIZE);
 		new DummyFormat(
 			new DataView(data.buffer, data.byteOffset, data.byteLength)

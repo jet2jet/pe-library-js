@@ -1,9 +1,9 @@
+import { createDataView } from '../util/functions.js';
 import FormatBase from './FormatBase.js';
+import ImageDataDirectoryArray from './ImageDataDirectoryArray.js';
 import ImageFileHeader from './ImageFileHeader.js';
 import ImageOptionalHeader from './ImageOptionalHeader.js';
 import ImageOptionalHeader64 from './ImageOptionalHeader64.js';
-import ImageDataDirectoryArray from './ImageDataDirectoryArray.js';
-import { createDataView } from '../util/functions.js';
 
 export default class ImageNtHeaders extends FormatBase {
 	public static readonly DEFAULT_SIGNATURE = 0x4550; // 'PE\x00\x00'

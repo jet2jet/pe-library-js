@@ -1,5 +1,5 @@
-import NtExecutable, { type NtExecutableSection } from '@/NtExecutable.js';
 import ImageDirectoryEntry from '@/format/ImageDirectoryEntry.js';
+import NtExecutable, { type NtExecutableSection } from '@/NtExecutable.js';
 
 // prettier-ignore
 const DUMMY_EXECUTABLE_32 = new Uint8Array([
@@ -228,7 +228,7 @@ const DUMMY_EXTRA_DATA_ALIGNED = (() => {
 	const newSize =
 		Math.floor((DUMMY_EXTRA_DATA.length + alignment - 1) / alignment) *
 		alignment;
-	return [...Array(newSize)].map((_, i) =>
+	return [...Array<undefined>(newSize)].map((_, i) =>
 		i < DUMMY_EXTRA_DATA.length ? DUMMY_EXTRA_DATA[i] : 0
 	);
 })();

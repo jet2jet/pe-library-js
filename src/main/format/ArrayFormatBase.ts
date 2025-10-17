@@ -1,6 +1,7 @@
 import FormatBase from './FormatBase.js';
 
 /** abstract class that support array-like methods and 'for...of' operation */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 abstract class ArrayFormatBase<T> extends FormatBase {
 	protected constructor(view: DataView) {
 		super(view);
@@ -47,7 +48,8 @@ interface ArrayFormatBase<T> {
 }
 /* istanbul ignore else */
 if (typeof Symbol !== 'undefined') {
-	(ArrayFormatBase.prototype as any)[(Symbol as any).iterator] =
+	ArrayFormatBase.prototype[Symbol.iterator] =
+		// eslint-disable-next-line @typescript-eslint/unbound-method
 		ArrayFormatBase.prototype._iterator;
 }
 export default ArrayFormatBase;
