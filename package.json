@@ -45,6 +45,7 @@
     "lint:prettier": "prettier --config ./.prettierrc.yml --check \"**/*.{js,jsx,ts,tsx,yml,json,md}\"",
     "lint:prettier:fix": "prettier --config ./.prettierrc.yml --write \"**/*.{js,jsx,ts,tsx,yml,json,md}\"",
     "test": "jest --config ./jest.config.basic.js",
+    "typecheck": "tsc -p tsconfig.json && echo \"Done.\"",
     "version": "node ./tools/updateVersion.js ./src/main/version.ts && git add -A ./src/main/version.ts"
   },
   "devDependencies": {

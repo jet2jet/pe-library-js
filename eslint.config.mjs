@@ -129,7 +129,6 @@ export default defineConfig(
 					},
 				},
 			],
-			'@typescript-eslint/no-duplicate-enum-values': 'off',
 			'@typescript-eslint/no-empty-function': [
 				'error',
 				{ allow: ['protected-constructors', 'private-constructors'] },
@@ -137,6 +136,7 @@ export default defineConfig(
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-inferrable-types': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'off',
+			'@typescript-eslint/no-redeclare': 'off',
 			'@typescript-eslint/no-use-before-define': 'off',
 			'@typescript-eslint/no-useless-constructor': 'error',
 			'@typescript-eslint/no-unsafe-argument': 'warn',
