@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.0
+
+- **\[Breaking changes\]** Drop older Node.js version (now ensures v20.19.5 or later)
+- **\[Maybe breaking changes\]** Change `ImageDirectoryEntry` enum to `const` object and `type` definition
+- (development) Update devDependencies packages excluding `typescript`
+
 ## v1.0.1
 
 - Fix section comparison (which allows same section names)
