@@ -29,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jet2jet/pe-library-js.git"
+    "url": "git+https://github.com/jet2jet/pe-library-js.git"
   },
   "funding": {
     "type": "github",
