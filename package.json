@@ -2,10 +2,8 @@
   "name": "pe-library",
   "version": "2.0.0",
   "engines": {
-    "node": ">=20.19.5",
-    "npm": ">=11.5.1"
+    "node": ">=20"
   },
-  "engineStrict": true,
   "description": "Node.js library for Portable Executable format",
   "module": "./dist/index.js",
   "type": "module",
