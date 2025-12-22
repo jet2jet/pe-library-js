@@ -28,7 +28,16 @@ fs.writeFileSync('MyApp_modified.exe', new Buffer(newBin));
 
 ### from CommonJS (using `require`)
 
-> Starting from v1.0.0, CommonJS support is changed; you must use `pe-library/cjs` to use from CommonJS file.
+> Starting from v1.0.0, CommonJS support is changed; you must use Node.js v20.19.0 or later, or use `pe-library/cjs` to use from CommonJS file.
+
+For CommonJS with Node.js v20.19.0 or later:
+
+```js
+const PE = require('pe-library');
+...
+```
+
+For CommonJS with using `pe-library/cjs`:
 
 ```js
 const { load } = require('pe-library/cjs');
