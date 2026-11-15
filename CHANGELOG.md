@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.2
+
+- Fix misconverting dword in big-endian (#23)
+
 ## v2.0.1
 
 - Remove npm version from engines and 'engineStrict' for convenience

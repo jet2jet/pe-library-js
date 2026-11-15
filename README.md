@@ -5,6 +5,10 @@
 
 pe-library provides parsing and generating Portable Executable (known as Windows Executables) binaries.
 
+> [!WARNING]  
+> This library treats raw binary data for executables.
+> Specifying untrusted binary (such as unchecked user inputs) may increase security risks.
+
 ## Usage
 
 ```js
