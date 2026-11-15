@@ -64,7 +64,7 @@ export function calculateCheckSumForPE(
 	if (lenExtra !== 0) {
 		let extra = 0;
 		for (let i = 0; i < lenExtra; i++) {
-			extra |= view.getUint8(lenAlign + i) << ((3 - i) * 8);
+			extra |= view.getUint8(lenAlign + i) << (i * 8);
 		}
 		update(extra);
 	}
