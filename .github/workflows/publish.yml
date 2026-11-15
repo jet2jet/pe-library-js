@@ -40,5 +40,5 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Publish
+      - name: Stage publish
         run: npm stage publish --access public
